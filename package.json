@@ -1,0 +1,12 @@
+{
+  "name": "spag-ai-bot",
+  "version": "1.0.0",
+  "description": "Automated SPaG AI project",
+  "main": "src/bot.js",
+  "scripts": {
+    "start": "node src/bot.js"
+  },
+  "dependencies": {
+    "playwright": "^1.55.0"
+  }
+}
