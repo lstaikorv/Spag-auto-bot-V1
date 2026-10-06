@@ -1,0 +1,40 @@
+name: SPaG AI
+
+on:
+  schedule:
+    - cron: "0 6 * * 2"
+  workflow_dispatch:
+
+jobs:
+  spag:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Random start delay
+        run: |
+          DELAY=$((RANDOM % 601))
+          echo "Waiting $DELAY seconds before starting..."
+          sleep $DELAY
+
+      - name: Run SPaG AI
+        env:
+          SPAG_USERNAME: ${{ secrets.SPAG_USERNAME }}
+          SPAG_PASSWORD: ${{ secrets.SPAG_PASSWORD }}
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+        run: npm start
