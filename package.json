@@ -1,12 +1,13 @@
 {
   "name": "spag-ai-bot",
   "version": "1.0.0",
-  "description": "Automated SPaG AI project",
+  "description": "AI SPaG automation project",
   "main": "src/bot.js",
   "scripts": {
     "start": "node src/bot.js"
   },
   "dependencies": {
+    "@google/genai": "^1.0.0",
     "playwright": "^1.55.0"
   }
 }
