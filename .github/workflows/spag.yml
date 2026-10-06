@@ -34,7 +34,7 @@ jobs:
 
       - name: Run SPaG AI
         env:
-          SPAG_USERNAME: ${{ secrets.SPAG_USERNAME }}
-          SPAG_PASSWORD: ${{ secrets.SPAG_PASSWORD }}
-          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          SPAG_USERNAME: ${{ secrets.Fuller4 }}
+          SPAG_PASSWORD: ${{ secrets.Pear4 }}
+          AI_API_KEY: ${{ secrets.AQ.Ab8RN6JDdFWuvF8tS3Tgs6ttFpHIFOA2uD61v04je0qollfQvQ}}
         run: npm start
